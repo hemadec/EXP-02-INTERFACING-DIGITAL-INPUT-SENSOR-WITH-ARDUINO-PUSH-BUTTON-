@@ -1,14 +1,20 @@
-# EXP-01-INTERFACING-DIGITAL-INPUT-SENSOR-WITH-ARDUINO-PUSH-BUTTON
+## INTERFACING DIGITAL INPUT SENSOR WITH ARDUINO PUSH BUTTON
+## DATE : 2/16/2024
+## NAME : HEMANATHAN>T																			             
+## ROLLNUMBER : 212221220019
+## DEPARTMENT : INFORMATION TECHNOLOGY
 
-AIM:  To interface a digital input (push button) and blink and LED upon activation.
-COMPONENTS REQUIRED:
+
+## AIM:
+To interface a digital input (push button) and blink and LED upon activation.
+## COMPONENTS REQUIRED:
 1.	1 KΩ Resistor 
 2.	Arduino Uno 
 3.	Bread board 
 4.	USB Interfacing cable 
 5.	Jumper wires 
 6.	LED of choice 
-THEORY :
+## THEORY :
 Arduino UNO
  	  The Uno is a microcontroller board based on the ATmega328P. It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 6 analog inputs, a 16 MHz quartz crystal, a USB connection, a power jack, an ICSP header and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started.
 	Technical specifications of Arduino UNO :
@@ -25,17 +31,15 @@ Flash Memory	16 KB (ATmega168) or 32 KB (ATmega328) of which 2 KB used by boot l
 SRAM	1 KB (ATmega168) or 2 KB (ATmega328)
 EEPROM	512 bytes (ATmega168) or 1 KB (ATmega328)
 Clock Speed	16 MHz
-PIN DIAGRAM FOR ATMEGA 328
+## PIN DIAGRAM FOR ATMEGA 328
  
 ![image](https://user-images.githubusercontent.com/36288975/163530394-115baee4-7ed1-49fe-9cce-d7b625e11e85.png)
 
 FIGURE-01
 ![image](https://user-images.githubusercontent.com/36288975/163530431-4d390e98-0942-42d8-95b8-f57d348e6ad8.png)
 
-
-
 FIGURE-02
-PROCEDURE 
+## PROCEDURE 
  Open tinker cad account 
 1.	Select Arduino uno , bread board , digital input and digital output 
 2.	Connect the circuit as given in the figure 
@@ -45,15 +49,7 @@ PROCEDURE
 
 
 
-
-
-
-
-
-CIRCUIT DIAGRAM 
-
-
-
+## CIRCUIT DIAGRAM 
 
 
 ![image](https://user-images.githubusercontent.com/36288975/163530437-87a0afbd-b3c9-44ad-b907-5de63486fb9d.png)
@@ -65,37 +61,49 @@ FIGURE -03
 
 
 
-
-PROGRAM 
- ```
- int buttonstate = 0;
-
+## PROGRAM 
+```
+ // C++ code
+//
+int led=3;
+int pushbutton=5;
 void setup()
 {
- pinMode(2, INPUT);
- pinMode(13, OUTPUT);
+  pinMode(led,OUTPUT);
+  pinMode(pushbutton,INPUT);
 }
 
 void loop()
 {
- buttonstate = digitalRead(2);  //
- if (buttonstate == HIGH){
-   digitalWrite(13, HIGH);
- }
- else{
-   digitalWrite(13, LOW);
- }
- 
- delay(15); //
- 
+  int pb;
+  pb=digitalRead(pushbutton);
+  if(pb==LOW)
+  {
+   digitalWrite(led,HIGH);
+   delay(500); 
+   digitalWrite(led,LOW);
+   delay(500);
 }
- 
- 
-``` 
- 
-### Output of the simulation :
-![out 1](https://github.com/hemadec/EXP-02-INTERFACING-DIGITAL-INPUT-SENSOR-WITH-ARDUINO-PUSH-BUTTON-/assets/124191397/9542c98a-e6c0-4077-974a-93c33f3641f4)
-![out 2](https://github.com/hemadec/EXP-02-INTERFACING-DIGITAL-INPUT-SENSOR-WITH-ARDUINO-PUSH-BUTTON-/assets/124191397/cf69e0ec-9ed3-468a-b8a1-90638ad17e9d)
-### RESULT:
-Thus, we have interfaced a digital input (push button) and blink of LED upon activation.
+  else
+  {
+       digitalWrite(led,LOW);
+       delay(500);
+  } 
+}
+```
 
+## OUTPUT OF SIMULATION :
+
+### BEFORE SIMULATION :
+![Screenshot 2024-02-16 155251](https://github.com/tsanjaithirumal/EXP-01-INTERFACING-DIGITAL-INPUT-SENSOR-WITH-ARDUINO-PUSH-BUTTON-/assets/119393916/d1ade48e-9965-4ebc-bddb-7af93e4542df)
+
+
+### AFTER SIMULATION:
+![Screenshot 2024-02-16 155311](https://github.com/tsanjaithirumal/EXP-01-INTERFACING-DIGITAL-INPUT-SENSOR-WITH-ARDUINO-PUSH-BUTTON-/assets/119393916/03aa15b7-88fc-40ca-a901-ce16922c8c4f)
+## SEMANTIC DIAGRAM:
+![Screenshot (11)](https://github.com/hemadec/EXP-02-INTERFACING-DIGITAL-INPUT-SENSOR-WITH-ARDUINO-PUSH-BUTTON-/assets/124191397/d3bdff19-a97d-443b-bfdd-528b8de3eb5e)
+
+
+
+
+[My image](username.github.com/repository/img/image.jpg)
